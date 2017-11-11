@@ -1,0 +1,133 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+html {
+  height:100%;
+  width:100%;
+  font-size: 100%;
+  overflow: hidden !important;
+}
+
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.61;
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  color: #D9CB9E;
+  background-color: #1E1E20;
+}
+
+a {
+  color: #DC3522;
+}
+a:hover, a:active {
+  color: #b02a1b;
+  outline: 0;
+}
+
+#timeline {
+  font-size: .9em;
+  width:2000px;
+  height:500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+#life {
+  position: relative;
+  overflow-y: hidden;
+  padding-top: 40px;
+  padding-bottom: 1em;
+}
+#life .event {
+  padding-right: 20px;
+  padding-bottom: 10px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+#life .event b {
+  padding-right: .5em;
+}
+#life .event .time {
+  display: inline-block;
+  overflow: hidden;
+  height: 100%;
+  border: 4px solid #444;
+  border-radius: 4px;
+  margin-right: 10px;
+  opacity: .5;
+  position: relative;
+  left: -2px;
+}
+
+#life section.year {
+  min-height: 100%;
+  box-sizing: border-box;
+  border-left: 1px dashed #37373a;
+  color: #777;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding-left: 10px;
+  padding-top: 10px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+#life .working .time {
+  border: 4px solid #B64926;
+}
+#life .education .time {
+  border: 4px solid #FFB03B;
+}
+#life .event:hover .time {
+  opacity: .8;
+}
+
+
+/* ================ OVERLAY ==================*/
+
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: white;
+}
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  overflow: hidden;
+  border: none;
+  background: url(../img/cross-out.png) no-repeat center center;
+  text-indent: 200%;
+  /*color: transparent;*/
+  outline: none;
+  z-index: 100;
+}
+
+.overlay-scale {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+  transition: transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+}
+
+.overlay-scale.open {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);  
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+  transition: transform 0.4s, opacity 0.4s;
+}
