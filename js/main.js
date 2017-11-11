@@ -1,4 +1,4 @@
-(function() {
+
 	var triggerBttn = [
 		document.getElementById( 'trigger-overlay-1' ),
 		document.getElementById( 'trigger-overlay-2' ),
@@ -23,57 +23,49 @@
 		overlay[4].querySelector( 'button.overlay-close' ),
 	]
 
-	var transEndEventNames = {
-			'WebkitTransition': 'webkitTransitionEnd',
-			'MozTransition': 'transitionend',
-			'OTransition': 'oTransitionEnd',
-			'msTransition': 'MSTransitionEnd',
-			'transition': 'transitionend'
-		};
-	var transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ];
-	var support = { transitions : Modernizr.csstransitions };
+	// var transEndEventNames = {
+	// 		'WebkitTransition': 'webkitTransitionEnd',
+	// 		'MozTransition': 'transitionend',
+	// 		'OTransition': 'oTransitionEnd',
+	// 		'msTransition': 'MSTransitionEnd',
+	// 		'transition': 'transitionend'
+	// 	};
+	// var transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ];
+	// var support = { transitions : Modernizr.csstransitions };
 
 	function toggleOverlay(overlay) {
-		if( classie.has( overlay, 'open' ) ) {
-			console.log("Overlay open:" + overlay)
-			classie.remove( overlay, 'open' );
-			classie.add( overlay, 'close' );
-			var onEndTransitionFn = function( ev ) {
-				if( support.transitions ) {
-					if( ev.propertyName !== 'visibility' ) return;
-					this.removeEventListener( transEndEventName, onEndTransitionFn );
-				}
-				classie.remove( overlay, 'close' );
-			};
-			if( support.transitions ) {
-				overlay.addEventListener( transEndEventName, onEndTransitionFn );
-			}
-			else {
-				onEndTransitionFn();
-			}
-		}
-		else if(!classie.has( overlay, 'close')) {
-			classie.add(overlay, 'open');
-		}
+		// if( classie.has( overlay, 'open' ) ) {
+		// 	console.log("Overlay open:" + overlay)
+		// 	classie.remove( overlay, 'open' );
+		// 	classie.add( overlay, 'close' );
+		// 	var onEndTransitionFn = function( ev ) {
+		// 		if( support.transitions ) {
+		// 			if( ev.propertyName !== 'visibility' ) return;
+		// 			this.removeEventListener( transEndEventName, onEndTransitionFn );
+		// 		}
+		// 		classie.remove( overlay, 'close' );
+		// 	};
+		// 	if( support.transitions ) {
+		// 		overlay.addEventListener( transEndEventName, onEndTransitionFn );
+		// 	}
+		// 	else {
+		// 		onEndTransitionFn();
+		// 	}
+		// }
+		// else if(!classie.has( overlay, 'close')) {
+		// 	classie.add(overlay, 'open');
+		// }
+		classie.toggle( overlay, 'open' );
 	}
-
-	
-
-	// for (var i = 0; i < 5; i++) {
-	// 	(function () {
-	// 		console.log(overlay[i]);
-	// 		triggerBttn[i].addEventListener( 'click', function(){
-	// 		    toggleOverlay(overlay[i]);
-	// 		}, false);
-	// 	}());
-	// }
 
 	triggerBttn[0].addEventListener( 'click', function(){
 	    toggleOverlay(overlay[0]);
 	}, false);
+
 	triggerBttn[0].addEventListener( 'keydown', function(){
 	    toggleOverlay(overlay[0]);
 	}, false);
+
 	triggerBttn[1].addEventListener( 'click', function(){
 	    toggleOverlay(overlay[1]);
 	}, false);
@@ -102,8 +94,6 @@
 	closeBttn[4].addEventListener( 'click', function(){
 	    toggleOverlay(overlay[4]);
 	}, false);
-
-})();
 
 $('nav a[href^="#"]').on('click', function(e) {
 	var $root = $('html, body, div');
