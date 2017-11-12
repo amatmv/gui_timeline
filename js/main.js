@@ -133,22 +133,11 @@
 	}, false);
 
 $('button[id^="sec"]').on('click', function(e) {
-	// $(this).hide();
 	e.preventDefault();
-	// console.log($("section#_"+$(this).attr('id')));
-	// $("button.current").removeClass("current");
 	$("section.active").addClass("hidden");
+	console.log($("section.active"));
 	$("section.active").removeClass("active");
 	$("section#_"+$(this).attr('id')).removeClass("hidden");
+	console.log($("section#_"+$(this).attr('id')));
 	$("section#_"+$(this).attr('id')).addClass("active");
-	
-	// $(document.getElementById("_"+$(this).attr('id'))).hide();
-	
-	// $(this).addClass('current').siblings().removeClass('current');
-});
-$(document).ready(function () {
-	$('.timeline').mousewheel(function(e, delta) {
-	    this.scrollLeft -= (delta * 40);
-	    e.preventDefault();
-	});
 });
