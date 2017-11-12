@@ -5,6 +5,7 @@
 		document.getElementById( 'trigger-overlay-3' ),
 		document.getElementById( 'trigger-overlay-4' ),
 		document.getElementById( 'trigger-overlay-5' ),
+		document.getElementById( 'trigger-overlay-6' ),
 	]
 
 	var overlay = [
@@ -13,6 +14,7 @@
 		document.querySelector( 'div.overlay-3' ),
 		document.querySelector( 'div.overlay-4' ),
 		document.querySelector( 'div.overlay-5' ),
+		document.querySelector( 'div.overlay-6' ),
 	]
 
 	var closeBttn = [
@@ -21,40 +23,10 @@
 		overlay[2].querySelector( 'button.overlay-close' ),
 		overlay[3].querySelector( 'button.overlay-close' ),
 		overlay[4].querySelector( 'button.overlay-close' ),
+		overlay[5].querySelector( 'button.overlay-close' ),
 	]
 
-	// var transEndEventNames = {
-	// 		'WebkitTransition': 'webkitTransitionEnd',
-	// 		'MozTransition': 'transitionend',
-	// 		'OTransition': 'oTransitionEnd',
-	// 		'msTransition': 'MSTransitionEnd',
-	// 		'transition': 'transitionend'
-	// 	};
-	// var transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ];
-	// var support = { transitions : Modernizr.csstransitions };
-
 	function toggleOverlay(overlay) {
-		// if( classie.has( overlay, 'open' ) ) {
-		// 	console.log("Overlay open:" + overlay)
-		// 	classie.remove( overlay, 'open' );
-		// 	classie.add( overlay, 'close' );
-		// 	var onEndTransitionFn = function( ev ) {
-		// 		if( support.transitions ) {
-		// 			if( ev.propertyName !== 'visibility' ) return;
-		// 			this.removeEventListener( transEndEventName, onEndTransitionFn );
-		// 		}
-		// 		classie.remove( overlay, 'close' );
-		// 	};
-		// 	if( support.transitions ) {
-		// 		overlay.addEventListener( transEndEventName, onEndTransitionFn );
-		// 	}
-		// 	else {
-		// 		onEndTransitionFn();
-		// 	}
-		// }
-		// else if(!classie.has( overlay, 'close')) {
-		// 	classie.add(overlay, 'open');
-		// }
 		classie.toggle( overlay, 'open' );
 	}
 
@@ -74,6 +46,9 @@
 	triggerBttn[4].addEventListener( 'click', function(){
 	    toggleOverlay(overlay[4]);
 	}, false);
+	triggerBttn[5].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[5]);
+	}, false);
 
 	closeBttn[0].addEventListener( 'click', function(){
 	    toggleOverlay(overlay[0]);
@@ -89,6 +64,9 @@
 	}, false);
 	closeBttn[4].addEventListener( 'click', function(){
 	    toggleOverlay(overlay[4]);
+	}, false);
+	closeBttn[5].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[5]);
 	}, false);
 
 $('button[id^="sec"]').on('click', function(e) {
