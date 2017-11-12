@@ -6,6 +6,13 @@
 		document.getElementById( 'trigger-overlay-4' ),
 		document.getElementById( 'trigger-overlay-5' ),
 		document.getElementById( 'trigger-overlay-6' ),
+		document.getElementById( 'trigger-overlay-7' ),
+		document.getElementById( 'trigger-overlay-8' ),
+		document.getElementById( 'trigger-overlay-9' ),
+		document.getElementById( 'trigger-overlay-10' ),
+		document.getElementById( 'trigger-overlay-11' ),
+		document.getElementById( 'trigger-overlay-12' ),
+		document.getElementById( 'trigger-overlay-13' ),
 	]
 
 	var overlay = [
@@ -15,6 +22,13 @@
 		document.querySelector( 'div.overlay-4' ),
 		document.querySelector( 'div.overlay-5' ),
 		document.querySelector( 'div.overlay-6' ),
+		document.querySelector( 'div.overlay-7' ),
+		document.querySelector( 'div.overlay-8' ),
+		document.querySelector( 'div.overlay-9' ),
+		document.querySelector( 'div.overlay-10' ),
+		document.querySelector( 'div.overlay-11' ),
+		document.querySelector( 'div.overlay-12' ),
+		document.querySelector( 'div.overlay-13' ),
 	]
 
 	var closeBttn = [
@@ -24,6 +38,13 @@
 		overlay[3].querySelector( 'button.overlay-close' ),
 		overlay[4].querySelector( 'button.overlay-close' ),
 		overlay[5].querySelector( 'button.overlay-close' ),
+		overlay[6].querySelector( 'button.overlay-close' ),
+		overlay[7].querySelector( 'button.overlay-close' ),
+		overlay[8].querySelector( 'button.overlay-close' ),
+		overlay[9].querySelector( 'button.overlay-close' ),
+		overlay[10].querySelector( 'button.overlay-close' ),
+		overlay[11].querySelector( 'button.overlay-close' ),
+		overlay[12].querySelector( 'button.overlay-close' ),
 	]
 
 	function toggleOverlay(overlay) {
@@ -49,6 +70,27 @@
 	triggerBttn[5].addEventListener( 'click', function(){
 	    toggleOverlay(overlay[5]);
 	}, false);
+	triggerBttn[6].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[6]);
+	}, false);
+	triggerBttn[7].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[7]);
+	}, false);
+	triggerBttn[8].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[8]);
+	}, false);
+	triggerBttn[9].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[9]);
+	}, false);
+	triggerBttn[10].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[10]);
+	}, false);
+	triggerBttn[11].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[11]);
+	}, false);
+	triggerBttn[12].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[12]);
+	}, false);
 
 	closeBttn[0].addEventListener( 'click', function(){
 	    toggleOverlay(overlay[0]);
@@ -68,13 +110,33 @@
 	closeBttn[5].addEventListener( 'click', function(){
 	    toggleOverlay(overlay[5]);
 	}, false);
+	closeBttn[6].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[6]);
+	}, false);
+	closeBttn[7].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[7]);
+	}, false);
+	closeBttn[8].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[8]);
+	}, false);
+	closeBttn[9].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[9]);
+	}, false);
+	closeBttn[10].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[10]);
+	}, false);
+	closeBttn[11].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[11]);
+	}, false);
+	closeBttn[12].addEventListener( 'click', function(){
+	    toggleOverlay(overlay[12]);
+	}, false);
 
 $('button[id^="sec"]').on('click', function(e) {
 	// $(this).hide();
 	e.preventDefault();
 	// console.log($("section#_"+$(this).attr('id')));
-	$("button.current").removeClass("current");
-	console.log($("button#"+$(this).attr('id')));
+	// $("button.current").removeClass("current");
 	$("section.active").addClass("hidden");
 	$("section.active").removeClass("active");
 	$("section#_"+$(this).attr('id')).removeClass("hidden");

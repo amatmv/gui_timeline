@@ -166,7 +166,14 @@ div.event > button {
 .overlay-3, 
 .overlay-4, 
 .overlay-5,
-.overlay-6 {
+.overlay-6,
+.overlay-7, 
+.overlay-8,
+.overlay-9, 
+.overlay-10, 
+.overlay-11,
+.overlay-12,
+.overlay-13 {
   position: absolute;
   width: 100%;
   top: 0;
@@ -182,7 +189,14 @@ div.event > button {
  .overlay-3 .overlay-close, 
  .overlay-4 .overlay-close,
  .overlay-5 .overlay-close,
- .overlay-6 .overlay-close {
+ .overlay-6 .overlay-close,
+ .overlay-7 .overlay-close, 
+ .overlay-8 .overlay-close,
+ .overlay-9 .overlay-close, 
+ .overlay-10 .overlay-close,
+ .overlay-11 .overlay-close,
+ .overlay-12 .overlay-close,
+ .overlay-13 .overlay-close {
   width: 80px;
   height: 80px;
   position: absolute;
